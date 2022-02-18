@@ -1,0 +1,19 @@
+/* CSS CARD */
+
+.cardpgcharacter img {
+  height: 360px;
+  width: 235px;
+  object-fit: cover;
+  padding-top: 5px;
+}
+
+.cardpgcharacter {
+  width: 235px;
+  padding: 0 6px 16px;
+  margin: 1px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  border-bottom-right-radius: 50px;
+}
