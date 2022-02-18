@@ -14,6 +14,7 @@ const Card = ({ data }) => {
         // key={index}
         className="imgcharacters"
         src={`${data.thumbnail.path}.${data.thumbnail.extension}`}
+        alt=""
         // alt={}
       />
       <div>{data.name}</div>
