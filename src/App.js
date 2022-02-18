@@ -9,6 +9,7 @@ import axios from "axios";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
 import Character from "./pages/Character/Character";
+import Comics from "./pages/Comics/Comics";
 import Footer from "./components/Footer/Footer";
 
 // import { library } from "@fortawesome/fontawesome-svg-core";
@@ -58,6 +59,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home data={data} />} />
         <Route path="/character" data={data} element={<Character />} />
+        <Route path="/comics" data={data} element={<Comics />} />
       </Routes>
       <Footer></Footer>
     </Router>
