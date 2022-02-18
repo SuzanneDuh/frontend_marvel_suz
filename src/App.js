@@ -12,9 +12,9 @@ import Character from "./pages/Character/Character";
 import Comics from "./pages/Comics/Comics";
 import Footer from "./components/Footer/Footer";
 
-// import { library } from "@fortawesome/fontawesome-svg-core";
-// import { faSearch, faCheck, faRedo } from "@fortawesome/free-solid-svg-icons";
-// library.add(faSearch, faCheck, faRedo);
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+library.add(faSearch);
 
 // nb pr memoire, au chargement de la page, on veut chercher les données, les récupérer et les stocker dans un état : pr cela on a besoin de usestate et useeffect et axios.
 // import { useState, useEffect } from "react";
@@ -28,6 +28,7 @@ function App() {
   // (on stocke les données que j'ai récupéré dans data, et qu'on ait pas la phrases que data existe pas encore, on met la phrase d'en dessous data is loading)
   const [data, setData] = useState({});
   // const [isLoading, setIsLoading] = useState(true);
+  const [search, setSearch] = useState("");
 
   // on met useeffect avec une fonction qui est vide, ce qui va me permettre d'executer cette fonction une seule fois au chargement du composant
 
@@ -36,7 +37,9 @@ function App() {
     // grrrrrrr async sans h à la fin !!!! tu te plantes tt le tps
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3100/characters`);
+        const response = await axios.get(
+          `http://localhost:3100/characters?name=${search}`
+        );
         // yes, mon console log de resp data marche dc je peux fr set data...ms debilos faut ensuite fr modif ds le return ^^
         // console.log(response.data);
         setData(response.data);
@@ -47,7 +50,7 @@ function App() {
       }
     };
     fetchData();
-  }, []);
+  }, [search]);
 
   return (
     <Router>
@@ -58,7 +61,12 @@ function App() {
       </Header>
       <Routes>
         <Route path="/" element={<Home data={data} />} />
-        <Route path="/character" data={data} element={<Character />} />
+        <Route
+          path="/character"
+          data={data}
+          element={<Character />}
+          setSearch={setSearch}
+        />
         <Route path="/comics" data={data} element={<Comics />} />
       </Routes>
       <Footer></Footer>

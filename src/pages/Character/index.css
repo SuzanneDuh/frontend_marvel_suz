@@ -1,5 +1,53 @@
 /* CSS Character */
 
+.pgcharacter {
+  /* border: 2px red solid; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.search-container {
+  /* border: 2px red solid; */
+  /* color: red; */
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-input {
+  width: 500px;
+  padding-left: 40px;
+  border-radius: 5px;
+  height: 37px;
+  border: none;
+  /* border: black 2px dotted; */
+  border-bottom-style: solid;
+  /* outline: none; */
+  font-family: "Roboto";
+  font-size: 16px;
+}
+
+.search-input::placeholder {
+  color: #cbcccd;
+  font-size: 24px;
+  border-bottom: black 2px solide;
+  border-bottom-style: black 2px dotted;
+}
+
+.search-input-icon {
+  position: absolute;
+  left: 20px;
+  top: 35px;
+  color: #bbbbbb;
+  padding-right: 20px;
+}
+
+/* CSS du wrap de mes ptites cartes de personnages */
+
 .pgcharacter-card-wrapper {
   width: 1280px;
   display: flex;
