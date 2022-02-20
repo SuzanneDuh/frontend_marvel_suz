@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ReactPaginate from "react-paginate";
 
 import axios from "axios";
 
@@ -14,6 +15,12 @@ const Character = () => {
   const [isLoading, setIsLoading] = useState(true);
   // const navigate = useNavigate();
 
+  const [page, setPage] = useState(2);
+  const [pageCount, setPageCount] = useState(1);
+  const handlePageClick = (event) => {
+    setPage(event.selected + 1);
+  };
+
   // on met useeffect avec une fonction qui est vide, ce qui va me permettre d'executer cette fonction une seule fois au chargement du composant
 
   useEffect(() => {
@@ -22,11 +29,13 @@ const Character = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://marvel-back-suz.herokuapp.com/characters?name=${search}`
+          `https://marvel-back-suz.herokuapp.com/characters?name=${search}&page=${page}`
         );
         // yes, mon console log de resp data marche dc je peux fr set data...ms debilos faut ensuite fr modif ds le return ^^
         // console.log(response.data);
         setData(response.data);
+        const limit = response.data.limit;
+        setPageCount(Math.ceil(Number(response.data.count) / limit));
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
@@ -34,7 +43,7 @@ const Character = () => {
       }
     };
     fetchData();
-  }, [search]);
+  }, [search, page]);
 
   return isLoading ? (
     <div className="pageencoursdechargement">
@@ -70,6 +79,24 @@ const Character = () => {
               />
             );
           })}
+      </div>
+      {/* // arg..tentative 2 options pr pagination, rien ne marche... // fr issue  */}
+      <div className="pagination">
+        <ReactPaginate
+          previousLabel={"Précédent"}
+          breakLabel="..."
+          nextLabel={"Suivant"}
+          onPageChange={handlePageClick}
+          pageCount={pageCount}
+          pageRangeDisplayed={6}
+          containerClassName={"pagination"}
+        />
+        {/* <button className="prec" onClick={() => setPage(page - 1)}>
+          Page précédente
+        </button>
+        <button className="voirpl" onClick={() => setPage(page + 1)}>
+          Page suivante
+        </button> */}
       </div>
     </div>
   );
