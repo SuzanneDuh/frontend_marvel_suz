@@ -1,15 +1,11 @@
 import React from "react";
 import logo from "../../assets/marvel-logo.png";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
-// import { useLocation } from "react-router-dom";
 
 import "./index.css";
 
 const Header = () => {
   const navigate = useNavigate();
-
-  //   const location = useLocation();
 
   return (
     <div className="header-container">
@@ -39,7 +35,7 @@ const Header = () => {
         </button>
         <button
           onClick={() => {
-            navigate("/favoris");
+            navigate("/favorites");
           }}
           className="header-button-favoris"
         >

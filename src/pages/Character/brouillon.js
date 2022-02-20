@@ -1,6 +1,6 @@
-// ca m'enerve !!!! ca marchait avant que je fasse le transfert vers card....
+// sauvegarde //
+//ca m'enerve !!!! ca marchait nickel avant  le transfert vers card....
 
-// je le mets ici au cas ou ... car ca marchait nickel avant la tentative de transfert vers card......^^
 // return isLoading ? (
 //   <div>Page en cours de chargement</div>
 // ) : (

@@ -12,8 +12,11 @@ const Cardscommics = ({ data }) => {
         src={`${data.thumbnail.path}.${data.thumbnail.extension}`}
         alt=""
       />
-      <div>{data.title}</div>
-      <div>{data.description}</div>
+      <div className="imgcardscomicscharactersdescname">
+        <div className="imgcardscomicscharactersname">{data.title}</div>
+        <br />
+        <div>{data.description}</div>
+      </div>
     </div>
   );
 };

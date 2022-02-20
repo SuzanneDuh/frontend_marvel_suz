@@ -7,16 +7,17 @@
   flex-direction: column;
 }
 
-.search-container {
+.search-barre {
   /* border: 2px red solid; */
   /* color: red; */
   padding: 20px;
   margin-top: 10px;
+  border-bottom-style: solid;
 }
 
-.search-container {
+/* .search-container {
   position: relative;
-}
+} */
 
 .search-input {
   width: 500px;
@@ -25,7 +26,6 @@
   height: 37px;
   border: none;
   /* border: black 2px dotted; */
-  border-bottom-style: solid;
   /* outline: none; */
   font-family: "Roboto";
   font-size: 16px;
@@ -38,12 +38,17 @@
   border-bottom-style: black 2px dotted;
 }
 
-.search-input-icon {
-  position: absolute;
+.search-input {
+  /* position: absolute;
   left: 20px;
-  top: 35px;
+  top: 35px; */
   color: #bbbbbb;
   padding-right: 20px;
+  outline: none;
+}
+
+.search-icon {
+  font-size: 30px;
 }
 
 /* CSS du wrap de mes ptites cartes de personnages */

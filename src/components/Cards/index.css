@@ -4,16 +4,34 @@
   height: 360px;
   width: 235px;
   object-fit: cover;
-  padding-top: 5px;
+  padding-top: 0px;
+  margin-bottom: 15px;
+  border-bottom: 5px red solid;
 }
 
 .cardpgcharacter {
   width: 235px;
-  padding: 0 6px 16px;
-  margin: 1px;
+  padding: 0 0px 16px;
+  margin: 5px;
   cursor: pointer;
   background-color: black;
   color: white;
   border-radius: 5px;
-  border-bottom-right-radius: 50px;
+  border-bottom-right-radius: 30px;
+}
+
+.cardpgcharacternamedesc {
+  padding: 20px;
+}
+
+.cardpgcharactername {
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+/* css pr que tte la carte s'allume en rouge au passage de la souris.  rouge lors du passage souris sur titre //hover */
+/* passion coloriage */
+
+.cardpgcharacter:hover {
+  background: rgb(210, 44, 44);
 }
