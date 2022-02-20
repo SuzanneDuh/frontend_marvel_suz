@@ -19,7 +19,7 @@ const CharacterId = () => {
       // async sans h !! tu te plantes tt le tps
       try {
         const response = await axios.get(
-          `http://localhost:3100/comics/${characterId}`
+          `https://marvel-back-suz.herokuapp.com/comics/${characterId}`
         );
         // console log de resp.data OK, dc je peux fr set data. ms oublie pas modif ds le return ^^
         // console.log(response.data);

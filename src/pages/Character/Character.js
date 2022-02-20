@@ -22,7 +22,7 @@ const Character = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3100/characters?name=${search}`
+          `https://marvel-back-suz.herokuapp.com/characters?name=${search}`
         );
         // yes, mon console log de resp data marche dc je peux fr set data...ms debilos faut ensuite fr modif ds le return ^^
         // console.log(response.data);

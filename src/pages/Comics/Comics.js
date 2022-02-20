@@ -16,7 +16,7 @@ const Comics = () => {
     const fetchData = async () => {
       try {
         const response =
-          await axios.get`http://localhost:3100/comics?search=${search}`;
+          await axios.get`https://marvel-back-suz.herokuapp.com/comics?search=${search}`;
         // console.log(response.data);
         setData(response.data);
         setIsLoading(false);
