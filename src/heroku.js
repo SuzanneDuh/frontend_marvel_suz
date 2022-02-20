@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const herokuapp = axios.create({
+const instance = axios.create({
   baseURL: "https://marvel-back-suz.herokuapp.com/",
 });
 
-export default herokuapp;
+export default instance;
